@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  references: 
+  result: MyString
+  range: MyString
+  in_range: false
+
+two:
+  references: 
+  result: MyString
+  range: MyString
+  in_range: false

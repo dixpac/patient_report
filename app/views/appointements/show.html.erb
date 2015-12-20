@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>References:</strong>
+  <%= @appointement.references %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @appointement.description %>
+</p>
+
+<%= link_to 'Edit', edit_appointement_path(@appointement) %> |
+<%= link_to 'Back', appointements_path %>
