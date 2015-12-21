@@ -1,4 +1,4 @@
-<%= form_for(@appointement) do |f| %>
+<%= form_for @appointement do |f| %>
   <% if @appointement.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@appointement.errors.count, "error") %> prohibited this appointement from being saved:</h2>
@@ -22,13 +22,8 @@
   </div>
 
   <div class="field">
-    <p> Add indicators </p>
-    <%= f.fields_for :appointement_indicators do |indicators|  %>
-      <li>
-        <%= indicators.collection_select :indicator_id, Indicator.all, :id, :name, include_blank: true %>
-        <%= indicators.text_field :result %><br>
-      </li>  
-    <% end %>
+    <p> Indicators </p>
+    <%= link_to_add_indicators "Add Indicator", f, :appointement_indicators %>
   </div>
   
   <div class="actions">

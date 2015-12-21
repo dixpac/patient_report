@@ -1,0 +1,4 @@
+<li>
+  <%= f.collection_select :indicator_id, Indicator.all, :id, :name, include_blank: true %>
+  <%= f.text_field :result %><br>
+</li>  

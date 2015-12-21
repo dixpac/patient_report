@@ -17,7 +17,6 @@ class AppointementsController < ApplicationController
   end
 
   def create
-    byebug
     @appointement = Appointement.new(appointement_params)
 
     respond_to do |format|
