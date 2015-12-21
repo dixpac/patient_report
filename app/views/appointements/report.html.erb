@@ -1,0 +1,28 @@
+<h2>Patient report</h2>
+
+<div class="report_header">
+  <h3><%= @appointement.patient.first_name.capitalize %> <%= @appointement.patient.last_name.capitalize %></h3>
+</div>
+
+<div class="indicators">
+  <table>
+    <thead>
+      <tr>
+        <th>Indicator</th>
+        <th>Result</th>
+        <th>Range</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @appointement.appointement_indicators.each do |indicator| %>
+        <tr>
+          <td><%= indicator.indicator.name %></td>
+          <td><%= indicator.result %></td>
+          <td><%= indicator.range %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

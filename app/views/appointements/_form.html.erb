@@ -12,14 +12,29 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :references %><br>
-    <%= f.text_field :references %>
+    <%= f.label :patient %><br>
+    <%= f.collection_select :patient_id, Patient.all, :id, :name, include_blank: true %><br>
   </div>
+
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+
+  <div class="field">
+    <p> Add indicators </p>
+    <%= f.fields_for :appointement_indicators do |indicators|  %>
+      <li>
+        <%= indicators.collection_select :indicator_id, Indicator.all, :id, :name, include_blank: true %>
+        <%= indicators.text_field :result %><br>
+      </li>  
+    <% end %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
+
+

@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
-  resources :appointements
+  
+  resources :appointements do 
+    get '/report', to: 'appointements#report', on: :member
+    get '/report_mail', to: 'appointements#report_mail', on: :member
+  end
+
+
   resources :indicators
   resources :patients
+ 
+  root 'appointements#index'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

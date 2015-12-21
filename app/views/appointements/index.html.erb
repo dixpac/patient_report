@@ -14,11 +14,14 @@
   <tbody>
     <% @appointements.each do |appointement| %>
       <tr>
-        <td><%= appointement.references %></td>
+        <td><%= appointement.patient.name %></td>
         <td><%= appointement.description %></td>
         <td><%= link_to 'Show', appointement %></td>
         <td><%= link_to 'Edit', edit_appointement_path(appointement) %></td>
         <td><%= link_to 'Destroy', appointement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', appointement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Print', report_appointement_path(appointement) %></td>
+        <td><%= link_to 'Send mail', report_mail_appointement_path(appointement) %></td>
       </tr>
     <% end %>
   </tbody>

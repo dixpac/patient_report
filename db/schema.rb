@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151220131540) do
+ActiveRecord::Schema.define(version: 20151220143832) do
 
   create_table "appointement_indicators", force: :cascade do |t|
     t.integer  "appointement_id"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20151220131540) do
     t.date     "date_of_birth"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "email"
   end
 
 end
